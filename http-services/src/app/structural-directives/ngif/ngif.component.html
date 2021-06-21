@@ -1,0 +1,56 @@
+<div class="card">
+  <div class="card-header h1">Ng-IF</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header h3">NgIf</div>
+          <div class="card-body">
+            <p>IF is true message is display</p>
+            <div *ngIf="userName">
+              <h3>Welcome to the user</h3>
+            </div>
+            <hr />
+            <div *ngIf="userName || passWord">
+              <h3>LogedIn the user (||)</h3>
+            </div>
+            <hr />
+            <div *ngIf="userName && passWord">
+              <h3>LogedIn the user (&&)</h3>
+            </div>
+            <hr />
+            <div *ngIf="!userName">
+              <h3>LogedIn the user (!)</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mt-5">
+          <div class="card-header h3">NgIf else</div>
+          <div class="card-body">
+            <div *ngIf="userName && passWord; else log_error">
+              <h3 style="background-color: green">Correct User Credintial</h3>
+            </div>
+            <ng-template #log_error>
+              <h3 style="background-color: red">Wrong User Credintial</h3>
+            </ng-template>
+          </div>
+        </div>
+
+        <div class="card mt-5">
+          <div class="card-header h3">NgIf Than else</div>
+          <div class="card-body">
+              <div *ngIf="userName && passWord;then login;else error"></div>
+              <ng-template #login >
+                  <h3 style="background-color: green">Login the User</h3>
+              </ng-template>
+              <ng-template #error>
+                  <h3 style="background-color: red">Invalid Username and password</h3>
+              </ng-template>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

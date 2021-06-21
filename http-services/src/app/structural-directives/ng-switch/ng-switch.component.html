@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-header h3">Ngswitch</div>
+  <div class="card-body">
+    <select class="form-control" (change)="chose($event.target)">
+      <option [value]="">Select Country</option>
+      <option [value]="c.code" *ngFor="let c of country">
+        {{ c.name }}
+      </option>
+    </select>
+    <div class="jumbotron mt-3">
+      <div [ngSwitch]="selectContry">
+        <div *ngSwitchCase="'ind'"><h1>India calling code +91</h1></div>
+        <div *ngSwitchCase="'uae'">
+          <h1>United Arab Emirates calling code +380</h1>
+        </div>
+        <div *ngSwitchCase="'uk'"><h1>United Kingdom calling code +44</h1></div>
+        <div *ngSwitchCase="'us'"><h1>United State calling code +1</h1></div>
+        <div *ngSwitchDefault><h1>Select Country</h1></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-5">
+  <div class="card-header h3">Select Country And District</div>
+  <div class="card-body">
+    <select class="form-control" (change)="states($event.target)">
+      <option>Select State</option>
+      <option [value]="s.code" *ngFor="let s of stateName">
+        {{ s.countryName }}
+      </option>
+    </select>
+    {{ stateCode }}
+  </div>
+</div>

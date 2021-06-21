@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-header h3">NgFor using list Tag</div>
+      <div class="card-body">
+        <div *ngIf="isCheck; else noStudent">
+          <ul>
+            <li *ngFor="let studentDetails of student">
+              {{ studentDetails.name | uppercase }}
+            </li>
+          </ul>
+        </div>
+        <ng-template #noStudent></ng-template>
+      </div>
+    </div>
+
+    <div class="card mt-5">
+      <div class="card-header h3">NgFor using Table</div>
+      <div class="card-body">
+        <table class="table">
+          <thead class="thead-dark">
+            <th>S.NO</th>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DATA OF BIRTH</th>
+            <th>PROPERTY</th>
+            <th>ODD OR EVEN</th>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let stdendTable of student;
+                index as i;
+                first as f;
+                last as l;
+                even as e;
+                odd as o
+              "
+            >
+              <td>{{ i + 1 }}</td>
+              <td>{{ stdendTable.id }}</td>
+              <td>{{ stdendTable.name }}</td>
+              <td>{{ stdendTable.dob | date }}</td>
+              <td *ngIf="f" style="background: chocolate">First</td>
+              <td *ngIf="l" style="background: cornflowerblue">Last</td>
+
+              <td *ngIf="e" style="background: darkgreen">Even</td>
+              <td *ngIf="o" style="background: deeppink">Odd</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card mt-5">
+      <div class="card-header h3">NgFor using Array</div>
+      <div class="card-body">
+        <ul *ngFor="let n of num">
+          <li>{{ n }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mt-5">
+      <div class="card-header h3">Nested For loop</div>
+      <div class="card-body">
+        <ul *ngFor="let nestedLoop of nsFor">
+          <li>{{ nestedLoop.type }}</li>
+          <ul *ngFor="let courseName of nestedLoop.course">
+            <li>{{ courseName.name }}</li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mt-5">
+      <div class="card-header h3">Select the Option</div>
+      <div class="card-body">
+        <select name="" id="" >
+            <option value="">Select Letter </option> ngw
+            <option value="" *ngFor="let item of letter ">{{item}}</option>
+        </select>
+    </div>
+    </div>
+
+
+  </div>
+</div>

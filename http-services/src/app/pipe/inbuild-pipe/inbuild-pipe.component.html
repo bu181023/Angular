@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header h3">{{ title | titlecase }}</div>
+  <div class="card-body">
+    <table class="table">
+      <thead class="bg-primary">
+        <th>ID</th>
+        <th>NAME</th>
+        <th>CITY</th>
+        <th>SALARY</th>
+        <th>SALARY</th>
+        <th>DATE OF BIRTH</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let e of empolyee">
+          <td>{{ e.id }}</td>
+          <td>{{ e.name | uppercase }}</td>
+          <td>{{ e.city | lowercase }}</td>
+          <td>{{ e.salary | number }}</td>
+          <td>{{ e.salary | currency:'INR':'symbol':'3.2-3'}}</td>
+          <td>{{ e.dob | date:'dd/MM/yyyy' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <pre>
+        {{empolyee | json}}
+    </pre>
+  </div>
+</div>

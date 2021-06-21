@@ -1,0 +1,16 @@
+<table class="table">
+  <thead class="thead-dark">
+    <th>ID</th>
+    <th>NAME</th>
+    <th>EMAIL</th>
+    <th>CITY</th>
+  </thead>
+  <tbody>
+      <tr  *ngFor="let e of emp">
+          <td>{{e.id}}</td>
+          <td>{{e.name}}</td>
+          <td>{{e.email}}</td>
+          <td>{{e.city}}</td>
+      </tr>
+  </tbody>
+</table>
