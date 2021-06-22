@@ -1,1 +1,61 @@
-{{data|json}}
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+  <div class="box">
+    <header fxLayout="row" fxLayoutAlign="space-between start">
+      <div class="left-side" fxLayout="column">
+        <div class="title" fxLayout="row" fxLayoutGap="20px">
+          <h2>Title :</h2>
+        </div>
+        <div class="title" fxLayout="row" fxLayoutGap="20px">
+          <h2>Description :</h2>
+          <h4>I am vignesh</h4>
+        </div>
+        <div class="title" fxLayout="row" fxLayoutGap="30px">
+          <h2>Service :</h2>
+          <div class="service">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Select Service </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p class="option">Contact</p>
+              <p class="option">License</p>
+            </mat-expansion-panel>
+          </div>
+        </div>
+      </div>
+      <div class="right-side">
+        <button
+          class="btn"
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          aria-label="Example icon-button with a menu"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>delete</mat-icon>
+            <span>Delete</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>share</mat-icon>
+            <span>Share </span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>forward </mat-icon>
+            <span>Forward</span>
+          </button>
+        </mat-menu>
+      </div>
+    </header>
+  </div>
+  <div class="box child-box"></div>
+</div>
+
+<ul *ngFor="let d of data">
+  {{
+    d.swagger
+  }}
+  <ul *ngFor="let i of d.info">
+    <li>{{ d.description }}</li>
+  </ul>
+</ul>
