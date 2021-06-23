@@ -12,12 +12,6 @@
     2px 4px 5px 0px rgba(0, 0, 0, 0.1);
 }
 
-.child-box{
-    width: 800px;
-    height: 100px;
-    margin-top: 10px;
-}
-
 header {
   margin-top: 10px;
   margin-right: 15px;
@@ -27,7 +21,7 @@ header {
   /* color: snow; */
 }
 .left-side .title {
-  text-align: center;
+  text-align: left;
   display: flex;
   align-items: baseline;
 }
@@ -37,10 +31,13 @@ header {
   background: white;
 }
 
-.option{
-    border-bottom: 1px solid transparent;
+.option {
+  border-bottom: 1px solid transparent;
 }
-.option:hover{
-    border-bottom: 1px solid rgba(224, 220, 220,5);
+.option:hover {
+  border-bottom: 1px solid rgba(224, 220, 220, 5);
 }
-
+mat-expansion-panel{
+  width: 500px;
+  margin-left: 50px;
+}

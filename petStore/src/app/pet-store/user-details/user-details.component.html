@@ -4,21 +4,80 @@
       <div class="left-side" fxLayout="column">
         <div class="title" fxLayout="row" fxLayoutGap="20px">
           <h2>Title :</h2>
+          <div>
+            <div *ngFor="let d of data">
+              <div *ngFor="let i of d.info">
+                {{ i.title }}
+              </div>
+            </div>
+          </div>
         </div>
         <div class="title" fxLayout="row" fxLayoutGap="20px">
-          <h2>Description :</h2>
-          <h4>I am vignesh</h4>
+          <h2>Description:</h2>
+          <div>
+            <div *ngFor="let d of data">
+              <div *ngFor="let i of d.info">
+                {{ i.description }}
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="title" fxLayout="row" fxLayoutGap="30px">
+        <div fxLayout="column" fxLayoutGap="30px">
           <h2>Service :</h2>
           <div class="service">
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>Select Service </mat-panel-title>
-              </mat-expansion-panel-header>
-              <p class="option">Contact</p>
-              <p class="option">License</p>
-            </mat-expansion-panel>
+            <mat-accordion>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title> Contact </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div *ngFor="let d of data">
+                  <div *ngFor="let i of d.info">
+                    <div *ngFor="let c of i.contact">
+                      <table>
+                        <tr>
+                          <td>Name</td>
+                          <td>:</td>
+                          <td>{{ c.name }}</td>
+                        </tr>
+                        <tr>
+                          <td>Email</td>
+                          <td>:</td>
+                          <td>{{ c.email }}</td>
+                        </tr>
+                        <tr>
+                          <td>Url</td>
+                          <td>:</td>
+                          <td>{{ c.url }}</td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title> License </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div *ngFor="let d of data">
+                  <div *ngFor="let l of d.license">
+                    <table>
+                      <tr>
+                        <td>Name</td>
+                        <td>:</td>
+                        <td>{{ l.name }}</td>
+                      </tr>
+
+                      <tr>
+                        <td>Url</td>
+                        <td>:</td>
+                        <td>{{ l.url }}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
           </div>
         </div>
       </div>
@@ -48,14 +107,4 @@
       </div>
     </header>
   </div>
-  <div class="box child-box"></div>
 </div>
-
-<ul *ngFor="let d of data">
-  {{
-    d.swagger
-  }}
-  <ul *ngFor="let i of d.info">
-    <li>{{ d.description }}</li>
-  </ul>
-</ul>
