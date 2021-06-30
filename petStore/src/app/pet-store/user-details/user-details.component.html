@@ -1,110 +1,112 @@
 <div class="container" fxLayout="column" fxLayoutAlign="center center">
-  <div class="box">
-    <header fxLayout="row" fxLayoutAlign="space-between start">
-      <div class="left-side" fxLayout="column">
-        <div class="title" fxLayout="row" fxLayoutGap="20px">
-          <h2>Title :</h2>
-          <div>
-            <div *ngFor="let d of data">
-              <div *ngFor="let i of d.info">
-                {{ i.title }}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="title" fxLayout="row" fxLayoutGap="20px">
-          <h2>Description:</h2>
-          <div>
-            <div *ngFor="let d of data">
-              <div *ngFor="let i of d.info">
-                {{ i.description }}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div fxLayout="column" fxLayoutGap="30px">
-          <h2>Service :</h2>
-          <div class="service">
-            <mat-accordion>
-              <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title> Contact </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div *ngFor="let d of data">
-                  <div *ngFor="let i of d.info">
-                    <div *ngFor="let c of i.contact">
-                      <table>
-                        <tr>
-                          <td>Name</td>
-                          <td>:</td>
-                          <td>{{ c.name }}</td>
-                        </tr>
-                        <tr>
-                          <td>Email</td>
-                          <td>:</td>
-                          <td>{{ c.email }}</td>
-                        </tr>
-                        <tr>
-                          <td>Url</td>
-                          <td>:</td>
-                          <td>{{ c.url }}</td>
-                        </tr>
-                      </table>
+    <div class="box">
+        <header fxLayout="row" fxLayoutAlign="space-between start">
+            <div class="left-side" fxLayout="column">
+                <div class="title" fxLayout="row" fxLayoutGap="20px">
+                    <h2>Title :</h2>
+                    <div>
+                        <div *ngFor="let d of data">
+                            <div *ngFor="let i of d.info">
+                                {{ i.title }}
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </mat-expansion-panel>
-
-              <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                  <mat-panel-title> License </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div *ngFor="let d of data">
-                  <div *ngFor="let l of d.license">
-                    <table>
-                      <tr>
-                        <td>Name</td>
-                        <td>:</td>
-                        <td>{{ l.name }}</td>
-                      </tr>
-
-                      <tr>
-                        <td>Url</td>
-                        <td>:</td>
-                        <td>{{ l.url }}</td>
-                      </tr>
-                    </table>
-                  </div>
+                <div class="title" fxLayout="row" fxLayoutGap="20px">
+                    <h2>Description:</h2>
+                    <div>
+                        <div *ngFor="let d of data">
+                            <div *ngFor="let i of d.info">
+                                {{ i.description }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </mat-expansion-panel>
-            </mat-accordion>
-          </div>
-        </div>
-      </div>
-      <div class="right-side">
-        <button
-          class="btn"
-          mat-icon-button
-          [matMenuTriggerFor]="menu"
-          aria-label="Example icon-button with a menu"
-        >
-          <mat-icon>more_vert</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>delete</mat-icon>
-            <span>Delete</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>share</mat-icon>
-            <span>Share </span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>forward </mat-icon>
-            <span>Forward</span>
-          </button>
-        </mat-menu>
-      </div>
-    </header>
-  </div>
+                <div fxLayout="column" fxLayoutGap="30px">
+                    <h2>Service :</h2>
+                    <div class="service">
+                        <mat-accordion>
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Contact
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div *ngFor="let d of data">
+                                    <div *ngFor="let i of d.info">
+                                        <div *ngFor="let c of i.contact">
+                                            <table>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>:</td>
+                                                    <td>{{ c.name }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td>:</td>
+                                                    <td>{{ c.email }}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Url</td>
+                                                    <td>:</td>
+                                                    <td>{{ c.url }}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel>
+
+                            <mat-expansion-panel>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        License
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <div *ngFor="let d of data">
+                                    <div *ngFor="let l of d.license">
+                                        <table>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>:</td>
+                                                <td>{{ l.name }}</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Url</td>
+                                                <td>:</td>
+                                                <td>{{ l.url }}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <button class="btn" mat-icon-button="mat-icon-button" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item="mat-menu-item">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete</span>
+                    </button>
+                    <button mat-menu-item="mat-menu-item">
+                        <mat-icon>share</mat-icon>
+                        <span>Share
+                        </span>
+                    </button>
+                    <button mat-menu-item="mat-menu-item">
+                        <mat-icon>forward
+                        </mat-icon>
+                        <span>Forward</span>
+                    </button>
+                </mat-menu>
+            </div>
+        </header>
+    </div>
 </div>
+
