@@ -23,10 +23,21 @@ p{
   font-weight: 500;
   font-size: medium;
 }
-#share {
+.share {
   width: 20px;
+}
+a .share{
+  padding-top: 20px;
 }
 .user{
   width: 40px;
   height: 45px;
+}
+a p{
+  /* background: #000; */
+  padding-top: 20px;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: white;
 }

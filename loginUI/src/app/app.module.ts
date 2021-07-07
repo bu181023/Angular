@@ -14,12 +14,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { DownloadComponent } from './download/download.component';
+import { ShareComponent } from './share/share.component';
+import { PageNotFoudComponent } from './page-not-foud/page-not-foud.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
+import { AppConfigComponent } from './app-config/app-config.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     LoginComponent,
+    DownloadComponent,
+    ShareComponent,
+    PageNotFoudComponent,
+    AppConfigComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +42,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatDividerModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
